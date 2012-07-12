@@ -14,17 +14,14 @@ if k > n:
     raise Exception('k cannot be greater than n')
 
 s = [int(1000*random.random()) for i in xrange(n)]
+orig = set(s)
 p = float(k) / float(n)
 
 r = set()
-recur = True
-while recur:
-    for x in s:
-        if random.random() < p:
-            r.add(x)
-            if(len(r) == k):
-                recur = False
-                break
+for x in range(0,k):
+    el = random.choice(s)
+    s.remove(el)
+    r.add(el)
 
-print "s is: " + str(s)
+print "s is: " + str(orig)
 print "r is: " + str(r)
