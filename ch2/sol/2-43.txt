@@ -1,0 +1,1 @@
+Whether we know n or not we can sample k values uniformly by assigning a random value to each element, sorting, and taking the top k values. However, this is not very efficient so instead we can use a priority queue of size k with random priority.

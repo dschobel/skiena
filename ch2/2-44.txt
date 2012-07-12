@@ -1,0 +1,13 @@
+1000 data items
+1000 nodes capable of storing 3000 items
+
+n1 stores d1000, d1, d2
+n2 stores, d1, d2, d3
+n3 stores d2, d3, d4
+
+three fail at random
+
+
+dn is stored by nn-1, nn, n+1
+
+so if three nodes fails, worst case you lose one data item
