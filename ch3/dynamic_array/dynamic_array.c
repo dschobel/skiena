@@ -24,12 +24,13 @@ addElement(dyn_array_t * ar, int value)
     if ((ar->size)+1 > ar->capacity) {
         ar->capacity *=2;
         printf("increasing capacity to %d\n",ar->capacity);
-        ar->data =  (int*)realloc(ar->data,ar->capacity*2*sizeof(int));
-        if(ar->data == NULL)
+        int *temp = (int*)realloc(ar->data,ar->capacity*2*sizeof(int));
+        if(temp == NULL)
         {
             printf("REALLOC FAILED!");
             return;
         }
+        ar->data = temp;
     }
     ar->data[ar->size] = value;
     ar->size++;
